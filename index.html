@@ -3,15 +3,17 @@
   <head>
 		<link rel="stylesheet" href="style.css" type="text/css"/>
     <script type="text/javascript" src="feigenbaum.js"> </script>
+    <script type="text/javascript" src="henon.js"> </script>
     <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
     <script src="https://unpkg.com/mathjs@5.4.0/dist/math.min.js"></script>
 	</head>
 	<body onload="init();">
     <div id="main">
       <div id="menu">
-        <h1>&nbsp Feigenbaum Cascade</h1>
-        <div id="graph" onclick="feigenbaum(0.01);" align="center">Start</div>
-        <div id="iter">&nbsp Iterations: 0</div>
+        <h1>&nbsp Creative Dynamics</h1>
+        <div id="graph0" class="graph" onclick="feigenbaum(0.01);" align="center">Feigenbaum</div>
+        <div id="graph1" class="graph" onclick="henon();" align="center">Henon</div>
+        <div id="iter"> Iterations: 0</div>
       </div>
       <div id="chart"></div>
 

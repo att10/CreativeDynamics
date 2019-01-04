@@ -2,9 +2,11 @@ function init() {
   Plotly.newPlot(chart, [], {showLegend: false}, {staticPlot: true} );
 }
 
+
+
 function feigenbaum(start) {
-  document.getElementById("graph").style.visibility = "hidden";
-  var aValues = math.range(2.503, 4, 0.0015).toArray();
+  document.getElementById("graph0").style.visibility = "hidden";
+  var aValues = math.range(0, 4, 0.004).toArray();
   var xValues = new Array(1000);
   for(i=0;i<1000;i++){
     var x = start;
@@ -31,7 +33,7 @@ function feigenbaum(start) {
   var chart = document.getElementById("chart");
   Plotly.plot(chart, data, {staticPlot: true});
   if(start < 1) {
-    document.getElementById("iter").innerHTML = "&nbsp Iterations: " + Math.round(start * 100);
+    document.getElementById("iter").innerHTML = "Iterations: " + Math.round(start * 100);
     setTimeout(function(){ feigenbaum(start+0.01) },1000);
   }
 }

@@ -31,15 +31,14 @@ body {
 #chart {
   position: relative;
   top: 10px;
-  height: 550px;
-  width: 90%;
+  height: 600px;
+  width: 95%;
   margin: auto;
   z-index: -1;
 }
 
-#graph {
+.graph {
   position: absolute;
-  left: 450px;
   top: 23px;
   width: 100px;
   height: 30px;
@@ -49,11 +48,19 @@ body {
   font-size: 25px;
 }
 
+#graph0 {
+	left: 420px;
+	width: 200px;
+}
+
+#graph1 {
+	left: 650px;
+}
+
 #iter {
   position: absolute;
-  left: 650px;
+  left: 950px;
   top: 23px;
-  width: 280px;
   height: 30px;
   border-radius: 2px;
   border: 1px solid lightgrey;
