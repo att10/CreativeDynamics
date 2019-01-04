@@ -2,6 +2,7 @@ var a = 1.4;
 var b = 0.3;
 
 function henon() {
+  document.getElementById("graph1").style.visibility = "hidden";
   var xValues = new Array(10000);
   var yValues = new Array(10000);
   xValues[0] = 1;

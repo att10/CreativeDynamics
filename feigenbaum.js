@@ -9,7 +9,7 @@ function init() {
 
 function feigenbaum(start) {
   document.getElementById("graph0").style.visibility = "hidden";
-
+  document.getElementById("graph1").style.visibility = "hidden";
   xValues = new Array(1000);
   for(i=0;i<1000;i++){
     var x = start;
