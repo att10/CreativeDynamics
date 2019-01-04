@@ -3,21 +3,18 @@
   <head>
 		<link rel="stylesheet" href="style.css" type="text/css"/>
     <script type="text/javascript" src="feigenbaum.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    <script src="https://unpkg.com/mathjs@5.4.0/dist/math.min.js"></script>
 	</head>
-	<body>
+	<body onload="init();">
     <div id="main">
-      <div id="menu"></div>
-      <div id="chart">
-        <canvas id="canvas"></canvas>
+      <div id="menu">
+        <header>Creative Dynamics</header>
+        <button class="graph" onclick="feigenbaum(0.01);">Feigenbaum</button>
       </div>
+      <div id="chart"></div>
 
     </div>
-
-    <script>
-      init();
-    </script>
 
   </body>
 </html>

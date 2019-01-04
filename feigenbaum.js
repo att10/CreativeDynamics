@@ -1,31 +1,28 @@
 function init() {
-  var ctx = document.getElementById("canvas").getContext('2d');
-  let chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        datasets: [{
-            data: [0, 20, 40, 50],
-        }, {
-            data: testData
-        }],
-        labels: ['1', '2', '3', '4']
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    suggestedMin: 10,
-                    suggestedMax: 30
-                }
-            }]
-        }
-    }
-  });
+  Plotly.newPlot(chart, []);
 }
 
-var testData = [10, 20, 30, 40, 50];
-function feigenbaum() {
-  var data = new Array(100);
+function feigenbaum(start) {
+  var aValues = math.range(2.002, 4, 0.002).toArray();
+  var xValues = new Array(1000);
+  for(i=0;i<1000;i++){
+    var x = start;
+    for(j=0;j<1000;j++) {
+      x = logistic(aValues[i], x);
+    }
+    xValues[i] = x;
+  }
+
+  var chart = document.getElementById("chart");
+  Plotly.plot(chart, [{
+    x: aValues,
+    y: xValues}]
+  );
+  if(start < 1) {
+    setTimeout(function(){ feigenbaum(start+0.01) },1000);
+  }
+}
+
+function logistic(a, x) {
+  return a*x*(1-x);
 }
