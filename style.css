@@ -1,6 +1,7 @@
 html {
 	height:100%;
 	width:100%;
+  font-family: Courier New;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 #menu {
   position: relative;
   top: 10px;
-  height: 50px;
+  height: 80px;
   width: 90%;
   margin: auto;
   border-radius: 2px;
@@ -29,8 +30,33 @@ body {
 
 #chart {
   position: relative;
-  top: 50px;
-  height: 500px;
+  top: 10px;
+  height: 550px;
   width: 90%;
   margin: auto;
+  z-index: -1;
+}
+
+#graph {
+  position: absolute;
+  left: 450px;
+  top: 23px;
+  width: 100px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+#iter {
+  position: absolute;
+  left: 650px;
+  top: 23px;
+  width: 280px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+  font-size: 25px;
 }
