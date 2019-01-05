@@ -25,7 +25,7 @@ function feigenbaum(start) {
     type: 'scatter',
     mode: 'markers',
     marker: {
-      opacity: 0.5,
+      opacity: 0.4,
       size: 1,
       line: {
         width: 1
