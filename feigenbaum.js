@@ -42,7 +42,7 @@ function feigenbaum(start) {
   if(count < 100) {
     document.getElementById("iter").innerHTML = "Iterations: " + (count);
     count++;
-    setTimeout(function(){ feigenbaum(Math.random()) },100);
+    feigenbaum(Math.random());
   }
 }
 
