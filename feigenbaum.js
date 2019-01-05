@@ -1,4 +1,4 @@
-var xValues, aValues;
+var xValues, aValues, data;
 
 function init() {
   Plotly.newPlot(chart, [], {showLegend: false}, {staticPlot: true} );
@@ -11,15 +11,16 @@ function feigenbaum(start) {
   document.getElementById("graph0").style.visibility = "hidden";
   document.getElementById("graph1").style.visibility = "hidden";
   xValues = new Array(1000);
+  var x;
   for(i=0;i<1000;i++){
-    var x = start;
+    x = start;
     for(j=0;j<1000;j++) {
       x = logistic(aValues[i], x);
     }
     xValues[i] = x;
   }
 
-  var data = [{
+  data = [{
     x: aValues,
     y: xValues,
     type: 'scatter',
