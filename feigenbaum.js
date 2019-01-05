@@ -41,7 +41,7 @@ function feigenbaum(start) {
   if(count < 50) {
     document.getElementById("iter").innerHTML = "Iterations: " + count;
     count++;
-    setTimeout(function(){ feigenbaum(Math.random()) },5000);
+    setTimeout(function(){ feigenbaum(Math.random()) },2000);
   }
 }
 
