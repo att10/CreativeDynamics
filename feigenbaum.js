@@ -44,7 +44,7 @@ function feigenbaum(start) {
     count++;
     setTimeout(function(){ feigenbaum(Math.random()) },2000);
   } else {
-    oldCount = count;
+    oldCount += count;
     count = 0;
     document.getElementById("graph0").style.visibility = "visible";
     document.getElementById("graph1").style.visibility = "visible";
