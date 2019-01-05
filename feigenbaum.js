@@ -42,6 +42,9 @@ function feigenbaum(start) {
     document.getElementById("iter").innerHTML = "Iterations: " + count;
     count++;
     setTimeout(function(){ feigenbaum(Math.random()) },2000);
+  } else {
+    document.getElementById("graph0").style.visibility = "visible";
+    document.getElementById("graph1").style.visibility = "visible";
   }
 }
 
