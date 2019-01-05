@@ -1,5 +1,6 @@
 var xValues, aValues, data;
 var count = 0;
+var oldCount;
 
 function init() {
   Plotly.newPlot(chart, [], {showLegend: false}, {staticPlot: true} );
@@ -39,10 +40,12 @@ function feigenbaum(start) {
   var chart = document.getElementById("chart");
   Plotly.plot(chart, data, {staticPlot: true});
   if(count < 20) {
-    document.getElementById("iter").innerHTML = "Iterations: " + count;
+    document.getElementById("iter").innerHTML = "Iterations: " + count + oldCount;
     count++;
     setTimeout(function(){ feigenbaum(Math.random()) },2000);
   } else {
+    oldCount = count;
+    count = 0;
     document.getElementById("graph0").style.visibility = "visible";
     document.getElementById("graph1").style.visibility = "visible";
   }
