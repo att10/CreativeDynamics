@@ -40,7 +40,7 @@ function feigenbaum(start) {
   var chart = document.getElementById("chart");
   Plotly.plot(chart, data, {staticPlot: true});
   if(count < 20) {
-    document.getElementById("iter").innerHTML = "Iterations: " + count + oldCount;
+    document.getElementById("iter").innerHTML = "Iterations: " + (count + oldCount);
     count++;
     setTimeout(function(){ feigenbaum(Math.random()) },2000);
   } else {
