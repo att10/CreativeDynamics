@@ -39,15 +39,10 @@ function feigenbaum(start) {
 
   var chart = document.getElementById("chart");
   Plotly.plot(chart, data, {staticPlot: true});
-  if(count < 20) {
-    document.getElementById("iter").innerHTML = "Iterations: " + (count + oldCount);
+  if(count < 100) {
+    document.getElementById("iter").innerHTML = "Iterations: " + (count);
     count++;
     setTimeout(function(){ feigenbaum(Math.random()) },100);
-  } else {
-    oldCount += count;
-    count = 0;
-    document.getElementById("graph0").style.visibility = "visible";
-    document.getElementById("graph1").style.visibility = "visible";
   }
 }
 
