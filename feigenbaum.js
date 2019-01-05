@@ -1,8 +1,9 @@
 var xValues, aValues, data;
+var count = 0;
 
 function init() {
   Plotly.newPlot(chart, [], {showLegend: false}, {staticPlot: true} );
-  aValues = math.range(2.6, 4, 0.0014).toArray();
+  aValues = math.range(2.6, 4, 0.0028).toArray();
 
 }
 
@@ -10,9 +11,9 @@ function init() {
 function feigenbaum(start) {
   document.getElementById("graph0").style.visibility = "hidden";
   document.getElementById("graph1").style.visibility = "hidden";
-  xValues = new Array(1000);
+  xValues = new Array(500);
   var x;
-  for(i=0;i<1000;i++){
+  for(i=0;i<500;i++){
     x = start;
     for(j=0;j<1000;j++) {
       x = logistic(aValues[i], x);
@@ -37,9 +38,10 @@ function feigenbaum(start) {
 
   var chart = document.getElementById("chart");
   Plotly.plot(chart, data, {staticPlot: true});
-  if(start < 1) {
-    document.getElementById("iter").innerHTML = "Iterations: " + Math.round(start * 200);
-    setTimeout(function(){ feigenbaum(start+0.005) },1000);
+  if(count < 100) {
+    document.getElementById("iter").innerHTML = "Iterations: " + count;
+    count++;
+    setTimeout(function(){ feigenbaum(Math.random()) },1000);
   }
 }
 
