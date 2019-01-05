@@ -39,10 +39,10 @@ function feigenbaum(start) {
 
   var chart = document.getElementById("chart");
   Plotly.plot(chart, data, {staticPlot: true});
-  if(count < 100) {
+  if(count < 50) {
     document.getElementById("iter").innerHTML = "Iterations: " + (count);
     count++;
-    feigenbaum(Math.random());
+    setTimeout(function(){ feigenbaum(Math.random()) },100);
   }
 }
 
