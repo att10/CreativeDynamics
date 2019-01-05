@@ -1,6 +1,6 @@
 var xValues, aValues, data;
 var count = 0;
-var oldCount;
+var oldCount = 0;
 
 function init() {
   Plotly.newPlot(chart, [], {showLegend: false}, {staticPlot: true} );
