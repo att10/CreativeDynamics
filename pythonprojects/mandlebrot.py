@@ -37,7 +37,7 @@ for y in range(h):
         else:
             bxValues.append(x)
             byValues.append(y)
-            
+
 print('now plotting...')
 plt.figure(dpi=150)
 plt.scatter(axValues,ayValues,1, c=iterVals)
