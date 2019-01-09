@@ -17,9 +17,9 @@ function henon() {
     type: 'scatter',
     mode: 'markers',
     marker: {
-      size: 1,
+      size: .8,
       line: {
-        width: 1
+        width: .8
       }
     },
     showlegend:false

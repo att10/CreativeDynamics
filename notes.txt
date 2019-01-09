@@ -1,0 +1,27 @@
+Discrete Dynamics - time is an integer
+
+Linear map on R2 - col vector = 2x2 * col vector
+rotations and dilation - angle preserving, conformal
+dilation [(a, 0), (0, a)]
+rotation [(cosx, -sinx), (sinx, cosx)]
+Matrix is a rotation and dilation iff A = D and B = -C
+F is conformal at (x0,y0) if du/dx=dv/dy and du/dy=-dv/dx where d is del
+
+R2 Vectors
+AB is a vector, ||AB|| = ||A|| ||B|| and angles sum
+
+Complex Dynamics
+F(z) = z^2 + c
+z = x + iy
+c = alpha + beta*i
+Filled in Julia Set: {z | F(z) !-> infinity}
+connected or cantor
+connected iff z = 0 does not go to infinity
+cantor iff z = 0 goes to infinity
+
+EXERCISE: Julia Set Plotter
+Check with Wolfram Alpha
+
+EXERCISE: Mandelbrot Set Plotter
+
+EXERCISE: explore, look up exponential and sine complex dynamics, bob devaney

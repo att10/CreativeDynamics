@@ -57,6 +57,15 @@ body {
 	left: 650px;
 }
 
+.param {
+	position: absolute;
+  top: 23px;
+}
+
+#cVal {
+	left: 420px;
+}
+
 #iter {
   position: absolute;
   left: 950px;
