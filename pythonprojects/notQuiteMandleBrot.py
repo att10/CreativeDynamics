@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import math
 
-w = 400
-h = 300
+w = 1080
+h = 720
 
 axValues = []
 bxValues = []
@@ -14,7 +14,7 @@ zoom = 0.9
 
 for y in range(h):
     for x in range(w):
-        cReal = 1.5*(x-w/2) / (0.5*w*zoom)
+        cReal = 1.5 * (x-w/2) / (0.5*w*zoom)
         cImag = (y-h/2) / (0.5*h*zoom)
         real = 0
         imag = 0
@@ -25,8 +25,8 @@ for y in range(h):
             rTemp = real
             iTemp = imag
 
-            real = (rTemp*rTemp) - (iTemp*iTemp) + cReal
-            imag = (2 * rTemp * iTemp) + cImag
+            real = (rTemp*rTemp*rTemp) - (3*rTemp*iTemp*iTemp) + cReal
+            imag = (3*rTemp*rTemp*iTemp) - (iTemp*iTemp*iTemp) + cImag
 
             iter += 1
 

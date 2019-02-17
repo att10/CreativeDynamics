@@ -1,26 +1,21 @@
-function init() {
-  Plotly.newPlot(chart, [], {showLegend: false}, {staticPlot: true} );
-}
-
-const w = 1920;
-const h = 1000;
+const w = 400;
+const h = 300;
 
 function julia() {
-  var xValues = math.range(-1, 1, 0.02).toArray();
-  var yValues = math.range(-1, 1, 0.02).toArray();
   var reValues = new Array(20000);
   var imValues = new Array(20000);
   var cReal = document.getElementById("alpha").value;
   var cImag = document.getElementById("beta").value;
-  var real, imag, z, rTemp, iTemp;
+  var real, imag, rTemp, iTemp;
   var count = 0;
+  var counter = document.getElementById("counter");
   for(y=0;y<h;y++) {
     for(x=0;x<w;x++) {
-      real = 1.5 * (x-w/2) / (0.5*w) + cReal;
-      imag = (y-h/2) / (0.5*h) + cImag;
-      var k;
+      real = 1.5 * (x-w/2) / (0.5*w);
+      imag = (y-h/2) / (0.5*h);
+
       var iter = 0;
-      var max = 250;
+      var max = 255;
       while((((real*real) + (imag*imag)) < 4) && iter < max) {
         rTemp = real;
         iTemp = imag;
@@ -30,35 +25,44 @@ function julia() {
 
         iter = iter + 1;
       }
-      //alert(reValues);
-      reValues[count] = real;
-      imValues[count] = imag;
-      count++;
+
+      if(iter < max) {
+        drawPixel(x, y,iter/2, 0, 100, 255);
+      } else {
+        drawPixel(x, y,0, 0, 0, 255);
+      }
+
+
+      //alert(x);
 
     }
   }
-
-
-  var data = [{
-    x: reValues,
-    y: imValues,
-    type: 'scatter',
-    mode: 'markers',
-    marker: {
-      opacity: 0.4,
-      size: 1,
-      line: {
-        width: 1
-      }
-    },
-    showlegend:false
-  }];
-
-  var chart = document.getElementById("chart");
-  Plotly.plot(chart, data, {staticPlot: true});
-
+  updateCanvas();
 }
 
-function getZ(x, y) {
-  return math.complex(x,y)
+var canvasData, ctx, canvasWidth;
+
+function init() {
+  var canvas = document.getElementById("myCanvas");
+  canvasWidth = canvas.width;
+  var canvasHeight = canvas.height;
+  ctx = canvas.getContext('2d');
+  canvasData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+  julia();
+}
+
+// That's how you define the value of a pixel //
+function drawPixel (x, y, r, g, b, a) {
+    var index = (x + y * canvasWidth) * 4;
+
+    canvasData.data[index + 0] = r;
+    canvasData.data[index + 1] = g;
+    canvasData.data[index + 2] = b;
+    canvasData.data[index + 3] = a;
+}
+
+// That's how you update the canvas, so that your //
+// modification are taken in consideration //
+function updateCanvas() {
+    ctx.putImageData(canvasData, 0, 0);
 }

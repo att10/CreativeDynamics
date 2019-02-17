@@ -57,6 +57,12 @@ body {
 	left: 650px;
 }
 
+#myCanvas {
+	position: relative;
+	top: 10px;
+	border: 1px solid lightgrey;
+	margin:auto;
+}
 .param {
 	position: absolute;
   top: 23px;

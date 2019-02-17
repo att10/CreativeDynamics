@@ -6,17 +6,17 @@
     <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
     <script src="https://unpkg.com/mathjs@5.4.0/dist/math.min.js"></script>
 	</head>
-	<body onload="init();">
+	<body>
     <div id="main">
       <div id="menu">
         <h1>&nbsp Julia Sets</h1>
         <div id = "cVal" class="param">
           c = <input id="alpha" type="number"/> + <input id="beta" type="number"/> * i
-          <button onclick="julia();">Go</button>
+          <button onclick="init();">Go</button>
         </div>
+        <div id="counter"></div>
       </div>
-      <div id="chart"></div>
-
+      <canvas id="myCanvas" height="300px" width="400px"></canvas>
     </div>
 
   </body>

@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
-import math
 
-w = 400
-h = 300
+w = 1920
+h = 1080
 
 axValues = []
 bxValues = []
@@ -10,23 +9,27 @@ ayValues = []
 byValues = []
 iterVals = []
 
-zoom = 0.9
+print('Let c = a + bi')
+print('Enter a:')
+cReal = float(input())
+print('Enter b:')
+cImag = float(input())
+zoom = 0.8
 
 for y in range(h):
     for x in range(w):
-        cReal = 1.5*(x-w/2) / (0.5*w*zoom)
-        cImag = (y-h/2) / (0.5*h*zoom)
-        real = 0
-        imag = 0
+        real = 1.5 * (x-w/2) / (0.5*w*zoom)
+        imag = (y-h/2) / (0.5*h*zoom)
+
         iter = 0
-        max = 300
+        max = 256
 
         while ((((real*real) + (imag*imag))) < 4) and iter < max:
             rTemp = real
             iTemp = imag
 
-            real = (rTemp*rTemp) - (iTemp*iTemp) + cReal
-            imag = (2 * rTemp * iTemp) + cImag
+            real = (rTemp*rTemp*rTemp) - (3*rTemp*iTemp*iTemp) + cReal
+            imag = (3*rTemp*rTemp*iTemp) - (iTemp*iTemp*iTemp) + cImag
 
             iter += 1
 
@@ -34,14 +37,14 @@ for y in range(h):
         if iter < max:
             axValues.append(x)
             ayValues.append(y)
-            iterVals.append(math.log(iter))
+            iterVals.append(iter*2)
         else:
             bxValues.append(x)
             byValues.append(y)
 
 print('now plotting...')
 plt.figure(dpi=150)
-plt.scatter(axValues,ayValues,1, c=iterVals)
-plt.scatter(bxValues,byValues,1, color="black")
+plt.scatter(axValues,ayValues, s=1, c=iterVals)
+plt.scatter(bxValues,byValues, s=1, color="black")
 plt.axis("off")
 plt.show()

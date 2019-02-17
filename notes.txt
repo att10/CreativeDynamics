@@ -1,3 +1,5 @@
+-----MONDAY---------------------------------------------------------------------
+
 Discrete Dynamics - time is an integer
 
 Linear map on R2 - col vector = 2x2 * col vector
@@ -25,3 +27,102 @@ Check with Wolfram Alpha
 EXERCISE: Mandelbrot Set Plotter
 
 EXERCISE: explore, look up exponential and sine complex dynamics, bob devaney
+
+-----WEDNESDAY------------------------------------------------------------------
+
+attractor
+x1->x2->...->x100->x101
+throw away |  keep
+
+fixed point: z=f(z)
+for z^2 - 1, fixed point is z = golden ratio
+
+omega limit set of x
+A is an attractor for f is A=W(x) for a big set of x
+
+basin of attraction for A is the set of all x with W(x)=A
+
+sensitive dependence to initial conditions
+
+chaos: system where this goes on all over
+
+lorenz water wheel, lorenz attractor
+
+devaney's chaos:
+1. sensitive dependence to initial conditions
+2. topological transitivity
+3. periodic points and dense
+
+-----THURSDAY-------------------------------------------------------------------
+
+a chaotic system is in a perpetual state of instability, which may be continual
+  or episodic
+
+divergence is exponential
+
+EXERCISE: # rice on last spot on chess board: 9.223372036854775808 × 10^18.
+1 pound is approximately 29,000 grains. so there are 3.1804731e+14 pounds of
+rice on the last square.
+where would the 5lb bag of rice go:
+5 pounds is 145000. logbase2(145000) is about 17.145, so the 18th position
+
+characteristic lyapunon exponent (cle)
+
+chaos means there is an attractor with a positive cle
+
+LAB 1: 2-D Chaotic System, start 2 points that cannot be distinguished
+  iterate until they separate
+
+LAB 2: f(x) = 4x(1-x)
+  a) Start points close = epsilon, iterate until not close = delta, count iterates n
+    (1/n)ln(delta/epsilon) = ln(M) = L = 1.38629
+  b) (1/n)ln(delta/epsilon) = (1/n)ln((f^n(x) - f^n(y))/(x-y)) =
+    (1/n)SUM()
+  c) 0.693147
+
+LAB 3:
+
+-----MONDAY---------------------------------------------------------------------
+
+Lorentz
+x' = a (y - x)
+y' = rx - y - xz
+z' = xy - bz
+a (sigma) = 10
+r = 28
+b = 8/3
+
+x' = -y - z
+y' = x + ay
+z' = b + z(x - c)
+a = b = 0.2
+c = 5.7
+
+-----WEDNESDAY------------------------------------------------------------------
+
+x' = -ax exponential
+x'' = -ax bouncy
+
+for Xk in [0,1]
+T0 = 100 deg
+TF = 20 deg
+for insulated boundary: make it flat at boundary
+wrap around
+H(Xk, Tn+1) = H(Xk, Tn) + delta(stuff)
+  = (1-u)H(Xk, Tn) + u( H(Xk,Tn-1) + H(Xk,Tn+1) )
+
+-----THURSDAY-------------------------------------------------------------------
+
+Conway's Game of Life:
+Axelrod's Olympiad
+Ken Bidmore
+Cellular Automata
+
+-----WEDNESDAY------------------------------------------------------------------
+
+Agent: individual operators --> emerging structures
+strogratz
+kuramoto model
+chimera
+smooth Life
+traffic jam shockwave
